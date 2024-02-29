@@ -1,2 +1,3 @@
-ISSUER=https://demo-stage.okta.com/oauth2/default
-CLIENT_ID=0oa7qtx0snERWlOys697
+ISSUER=https://oiebeyondwf102.oktapreview.com/oauth2/default
+CLIENT_ID=0oa3nergk7ve63b1u1d7
+PORT=5510
