@@ -32,7 +32,7 @@ const env = {};
 export default defineConfig(( { command } ) => {
   const includeSampleBaseName = command === 'build' && !process.env.STANDALONE_SAMPLE_BUILD;
   return {
-    base: includeSampleBaseName ? '/custom-login/' : '/',
+    base: includeSampleBaseName ? '' : '/',
     plugins: [react()],
     define: {
       'process.env': env
