@@ -5,7 +5,7 @@ module.exports = {
   logLevel: 'silent',
   files: ['./lib/**/*.{html,htm,css,js}'],
   server: { 
-    baseDir: './server/lib',
+    baseDir: './lib',
     middleware: {
       0: null
     }

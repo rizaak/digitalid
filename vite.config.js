@@ -32,7 +32,7 @@ const env = {};
 export default defineConfig(( { command } ) => {
   const includeSampleBaseName = command === 'build' && !process.env.STANDALONE_SAMPLE_BUILD;
   return {
-    base: includeSampleBaseName ? '' : '/',
+    base: includeSampleBaseName ? '/' : '/',
     plugins: [react()],
     define: {
       'process.env': env
@@ -49,6 +49,7 @@ export default defineConfig(( { command } ) => {
       port: process.env.PORT || 8080
     },
     build: {
+      outDir: 'server/dist',
       rollupOptions: {
         // always throw with build warnings
         onwarn (warning, warn) {

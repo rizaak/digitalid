@@ -11,10 +11,11 @@ const Login = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [showform, setShowForm] = useState(false);
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get('redirect');
+  const clientId = params.get('client_id');
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const redirect = params.get('redirect');
     if(redirect){
       localStorage.setItem('redirect', redirect);
     }
@@ -53,7 +54,11 @@ const Login = () => {
           setLoading(false);
           setError("Invalid username or password.");
         }else{ 
-          oktaAuth.signInWithRedirect({sessionToken});
+          if(clientId){
+            oktaAuth.signInWithRedirect({sessionToken,redirectUri:redirect,clientId});
+          }else{
+            oktaAuth.signInWithRedirect({sessionToken});
+          }
         }
       }catch(err){
         setLoading(false);
