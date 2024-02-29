@@ -7,7 +7,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path';
 import getEnvModule from './env'
 
-getEnvModule().setEnvironmentVarsFromTestEnv(__dirname+'/custom-login');
+getEnvModule().setEnvironmentVarsFromTestEnv(__dirname);
 
 process.env.CLIENT_ID = process.env.SPA_CLIENT_ID || process.env.CLIENT_ID;
 process.env.OKTA_TESTING_DISABLEHTTPSCHECK = process.env.OKTA_TESTING_DISABLEHTTPSCHECK || false;

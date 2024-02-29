@@ -3,9 +3,9 @@
 module.exports = {
   port: process.env.PORT || 8080,
   logLevel: 'silent',
-  files: ['./dist/**/*.{html,htm,css,js}'],
+  files: ['./lib/**/*.{html,htm,css,js}'],
   server: { 
-    baseDir: './dist',
+    baseDir: './server/lib',
     middleware: {
       0: null
     }
