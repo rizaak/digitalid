@@ -25,6 +25,7 @@ import Navbar from './Navbar';
 import Profile from './Profile';
 import CorsErrorModal from './CorsErrorModal';
 import AuthRequiredModal from './AuthRequiredModal';
+import Logout from './Logout';
 
 const oktaAuth = new OktaAuth(config.oidc);
 
@@ -72,6 +73,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/login/callback" render={(props) => <LoginCallback {...props} onAuthResume={onAuthResume} />} />
           <Route path="/login" render={() => <CustomLoginComponent {...{ setCorsErrorModalOpen }} />} />
+          <Route path="/logout" render={() => <Logout />} />
           <Route path="/requestToken" render={() => <RequestToken />} />
           <Route path="/registry" render={() => <Registry />} />
           <SecureRoute path="/messages" component={Messages} />
